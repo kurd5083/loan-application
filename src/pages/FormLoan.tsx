@@ -33,6 +33,7 @@ const FormLoan = () => {
   const handleTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = parseInt(e.target.value, 10);
     const newData = { ...formData, term };
+    console.log(newData)
     setFormData(newData);
     updateLoan(newData);
   };

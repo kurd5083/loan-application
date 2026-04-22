@@ -47,19 +47,19 @@ const useFormStore = create<FormStore>()(
     (set) => ({
       data: initialState,
 
-      updatePersonal: (data) =>
+      updatePersonal: (personal) =>
         set((state) => ({
-          data: { ...state.data, data },
+          data: { ...state.data, personal },
         })),
 
-      updateAddress: (data) =>
+      updateAddress: (address) =>
         set((state) => ({
-          data: { ...state.data, data },
+          data: { ...state.data, address },
         })),
 
-      updateLoan: (data) =>
+      updateLoan: (loan) =>
         set((state) => ({
-          data: { ...state.data, data },
+          data: { ...state.data, loan },
         })),
     }),
     {
