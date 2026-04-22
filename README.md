@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# 📝 Loan Application - Многошаговая форма заявки на займ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Netlify Status](https://img.shields.io/badge/netlify-deployed-success)](https://loan-application-test.netlify.app/)
+[![React](https://img.shields.io/badge/React-18.2.0-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.3.0-blue)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5.0.8-purple)](https://vitejs.dev/)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-Currently, two official plugins are available:
+## 🌐 Демо
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**[Открыть приложение на Netlify](https://loan-application-test.netlify.app/)**
 
-## React Compiler
+## 📋 Описание проекта
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+SPA приложение для подачи заявки на займ, состоящее из трех последовательных форм с валидацией данных и финальным модальным окном подтверждения.
 
-## Expanding the ESLint configuration
+**Особенности:**
+- ✅ Последовательное заполнение данных
+- ✅ Валидация всех полей с подсказками
+- ✅ Сохранение данных в localStorage (после перезагрузки данные не теряются)
+- ✅ Навигация между формами с сохранением состояния
+- ✅ Интеграция с тестовым API (dummyjson.com)
+- ✅ Кэширование API запросов для оптимизации
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Технологии и библиотеки
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+| Библиотека | Версия | Назначение | Почему выбрали |
+|------------|--------|------------|----------------|
+| **React** | 19.2.5 | UI библиотека | Современный, компонентный подход, новый компилятор |
+| **TypeScript** | 6.0.2 | Типизация кода | Безопасность типов, автодополнение |
+| **React Router DOM** | 7.14.2 | Маршрутизация | Навигация между формами, работа кнопки "Назад" |
+| **Zustand** | 5.0.12 | Управление состоянием | Простой API, persist для localStorage |
+| **TanStack Query** | 5.99.2 | Серверное состояние | Кэширование, автоматическая загрузка |
+| **Axios** | 1.15.2 | HTTP клиент | Интерсепторы, удобная обработка ошибок |
+| **Styled Components** | 6.4.1 | Стилизация | CSS-in-JS, динамические стили |
+| **Vite** | 8.0.9 | Сборка | Быстрая разработка, HMR |
